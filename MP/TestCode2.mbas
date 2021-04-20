@@ -1,0 +1,43 @@
+program TestCode2
+
+' Declarations section 
+
+sub function mask(dim character as integer ) as integer
+dim temp_holder as integer
+  if character = 0 then
+     temp_holder = 0x01
+  end if
+  if character = 1 then
+     temp_holder = 0x08
+  end if
+  if character = 2 then
+     temp_holder = 0x06
+  end if
+  if character = 3 then
+     temp_holder = 0x30
+  end if
+  result = temp_holder
+end sub
+
+main:
+  dim a , x as integer ' declare two variables 'a' and 'x'
+'set port A as the output and toggle it to ON
+  TRISA = 0x00
+  PORTA=0x00
+'set port D as the output and toggle it to OFF
+  TRISD = 0x00 
+  PORTD=0x00
+  while(1)
+      PORTA=0x20 'set port A to 32 bits
+     for x = 0 to 3
+        PORTD=mask(x)' set port D to a masked value of the loop counter x
+        Delay_ms(2000)' delay for 2000 milliseconds
+     next x
+
+     	PORTA=0x10 ' set port A to 16 bits
+      for x = 0 to 3
+         PORTD=mask(x)' set port D to  a masked value of the loop counter x
+         Delay_ms(2000)' delay 2000 milliseconds
+      next x
+  wend
+end.

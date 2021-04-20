@@ -1,0 +1,7 @@
+[PROJECTS]
+Count=3
+Project0=PushButtonLED.mbppi
+Project1=UART.mbppi
+Project2=NLCD.mbppi
+[ActiveProject]
+Index=2

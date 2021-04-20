@@ -1,0 +1,13 @@
+program nsegRev
+
+' Declarations section 
+
+main:
+'   Main program 
+TRISA = 0X00
+TRISD = 0X00
+
+PORTA = 0X3C
+PORTD = 0X37
+
+end.

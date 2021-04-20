@@ -1,0 +1,17 @@
+program nSeg
+
+' Declarations section 
+
+main:
+'   Main program 
+TRISD = 0X00 ' set PORTD as the output
+
+' Pin aliases have been added to the SpareParts segment Properties
+
+PORTD.RD0 = 1   ' set pin RD0 to HIGH
+PORTD.RD1 = 1   ' set pin RD1 to HIGH
+PORTD.RD2 = 1   ' set pin RD2 to HIGH
+PORTD.RD3 = 1    ' set pin RD3 to HIGH
+PORTD.RD4 = 1   ' set pin RD4 to HIGH
+
+end.

@@ -1,0 +1,38 @@
+program nSeg
+
+' Declarations section 
+dim LCD_RS as sbit at RB4_bit           ' reset
+    LCD_EN as sbit at RB5_bit           ' enable
+
+    LCD_D4 as sbit at RB0_bit             ' Data pins
+    LCD_D5 as sbit at RB1_bit
+    LCD_D6 as sbit at RB2_bit
+    LCD_D7 as sbit at RB3_bit
+
+    LCD_RS_Direction as sbit at TRISB4_bit
+    LCD_EN_Direction as sbit at TRISB5_bit
+    LCD_D4_Direction as sbit at TRISB0_bit
+    LCD_D5_Direction as sbit at TRISB1_bit
+    LCD_D6_Direction as sbit at TRISB2_bit
+    LCD_D7_Direction as sbit at TRISB3_bit
+    
+    
+main:
+'   Main program 
+'------------- 7 segment --------------------
+TRISD = 0X00 ' set PORTD as the output
+' Pin aliases have been added to the SpareParts segment Properties
+
+PORTD.RD0 = 1   ' set pin RD0 to HIGH
+PORTD.RD1 = 1   ' set pin RD1 to HIGH
+PORTD.RD2 = 1   ' set pin RD2 to HIGH
+PORTD.RD3 = 1    ' set pin RD3 to HIGH
+PORTD.RD4 = 1   ' set pin RD4 to HIGH
+' ----------- LCD ----------------------
+Lcd_Init()      ' Initialize the LCD
+Lcd_Cmd(_LCD_CLEAR) ' Clear LCD screen
+Lcd_Cmd(_LCD_CURSOR_OFF) ' turn the cursor off
+Lcd_Out(1,1,"Fall 2020")
+Lcd_Out(2,1,"Kareem 89169")
+Delay_ms(2000)
+end.

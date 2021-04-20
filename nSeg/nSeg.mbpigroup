@@ -1,0 +1,6 @@
+[PROJECTS]
+Count=2
+Project0=..\MP\NLCD.mbppi
+Project1=nSeg.mbppi
+[ActiveProject]
+Index=1

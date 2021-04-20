@@ -1,0 +1,17 @@
+program UART
+
+' Declarations section 
+dim id as longint      ' id is in the range of the long int
+
+main:
+'   Main program
+UART1_Init(19200) ' initialize UART at baud rate 19200
+Delay_ms(100)' wait for the module to stabilize
+id = 89169    ' assign decimal to the id
+UART1_Write(id) ' send the id
+' sending the messages in an infinite  loop
+while(1)
+        UART1_Write_Text("Abdul Kareem")        ' user name
+        UART1_Write_Text("I love microcontrollers")        ' message
+wend
+end.

@@ -1,0 +1,29 @@
+program NLCD
+
+' Declarations section
+main:
+'   Main program 
+TRISB = 0X00    ' Data lines
+TRISD = 0X00    ' Control signal for PORTD pins
+
+' loop to display in the four segments
+while(1)
+        ' using the segment editor oxA3 is obtained as the code for n in a
+        ' common cathode display
+        PORTD = 0x01 ' first segment
+        PORTB =  0x5C    ' display char 'n' in portB
+        Delay_Ms(10)
+        
+        PORTD = 0x02 ' second segment
+        PORTB =  0x5C    ' display char 'n' in portB
+        Delay_Ms(10)
+        
+        PORTD = 0x04 ' third  segment
+        PORTB =  0x5C    ' display char 'n' in portB
+        Delay_Ms(10)
+        
+        PORTD = 0x08 ' forth segment
+        PORTB =  0x5C    ' display char 'n' in portB
+        Delay_Ms(10)
+wend
+end.
